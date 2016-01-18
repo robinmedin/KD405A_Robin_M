@@ -1,5 +1,3 @@
-//TESTING
-
 package se.mah;
 
 import java.awt.BorderLayout;
