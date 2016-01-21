@@ -22,13 +22,18 @@ import java.awt.SystemColor;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
+import java.awt.Toolkit;
+import javax.swing.DropMode;
 
 public class Main extends JFrame {
-	private JTextField txtHubertHankefjord;
+	private JTextField txtGymNamn;
 	private JTextField txtlkorvensEsplanad;
 	private JTextField txtMalm;
-	private JTextField txtxxxx;
-	private JTextField textField;
+	private JTextField txtTele;
+	private JTextField textPersonnr;
+	private JTextField txtHuberthunkgmailcom;
 
 	/**
 	 * Launch the application.
@@ -50,8 +55,9 @@ public class Main extends JFrame {
 	 * Create the frame.
 	 */
 	public Main() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Main.class.getResource("/images/gymwallpaper2.jpg")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 692, 350);
+		setBounds(100, 100, 691, 406);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -85,12 +91,14 @@ public class Main extends JFrame {
 		getContentPane().setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 0, 169, 306);
+		scrollPane.setBounds(0, 0, 169, 362);
 		getContentPane().add(scrollPane);
 		
 		JList list = new JList();
+		list.setForeground(Color.BLACK);
+		list.setBackground(Color.LIGHT_GRAY);
 		list.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Hubert Hankefjord", "Heinrich von Ludendorff", "Andrew Asfjäll", "Robert Ruddlöv", "Filip Felföding", "Staffan Stenkula", "Nosferatu Nilsson", "Brad Pittsson", "Thor Trilldrutt", "Danko Drullputte", "Uno Onkelhoffer", "Inez Ifsengrull", "Vlad Putin", "Christoph Quisling", "Joakim Franz", "Hugo Ilsenschneizer", "Hanz Hoffsenschnofsen", "Axel Avfallsansvarig", "Bo-Björn Björndahl", "Wollmert Wilderin"};
+			String[] values = new String[] {"Olle H. Oppenheimer", "Nosferatu Nilsson", "Dan Drullputte", "Pericles Persson", "Svea Swartenbrandt", "Hubert Hoffsenschneizer", "Xerxes Hansson", "Rickard Ruddlöv", "Staffan Stenkula", "Filippa Ferdinand", "Brad Pittsson", "Hjördis Trilldrutt", "Uno Onkelhoffer", "Inez Ibsen", "Vlad Putin", "Christoph Quisling", "Hugo Hagbardsson", "Axel Avfallén", "Bo-Björn Björndahl", "Wollmert Wilderin", "Pjotr Pettersson", "Onkel P. Ottosson", "Stellan Shrödinger", "Jon Skolmen", "Vera Wagner"};
 			public int getSize() {
 				return values.length;
 			}
@@ -100,50 +108,86 @@ public class Main extends JFrame {
 		});
 		scrollPane.setViewportView(list);
 		
-		txtHubertHankefjord = new JTextField();
-		txtHubertHankefjord.setText("Hubert Hankefjord");
-		txtHubertHankefjord.setBounds(250, 6, 169, 26);
-		getContentPane().add(txtHubertHankefjord);
-		txtHubertHankefjord.setColumns(10);
+		txtGymNamn = new JTextField();
+		txtGymNamn.setText("Olle H. Oppenheimer");
+		txtGymNamn.setBounds(250, 169, 210, 26);
+		getContentPane().add(txtGymNamn);
+		txtGymNamn.setColumns(10);
 		
 		JLabel lblAdress = new JLabel("Namn:");
-		lblAdress.setBounds(181, 11, 46, 16);
+		lblAdress.setForeground(Color.WHITE);
+		lblAdress.setBounds(181, 174, 46, 16);
 		getContentPane().add(lblAdress);
 		
 		JLabel lblAdress_1 = new JLabel("Adress:");
-		lblAdress_1.setBounds(181, 44, 57, 16);
+		lblAdress_1.setForeground(Color.WHITE);
+		lblAdress_1.setBounds(181, 207, 57, 16);
 		getContentPane().add(lblAdress_1);
 		
 		txtlkorvensEsplanad = new JTextField();
 		txtlkorvensEsplanad.setText("Ölkorvens Esplanad 13");
 		txtlkorvensEsplanad.setColumns(10);
-		txtlkorvensEsplanad.setBounds(250, 39, 169, 26);
+		txtlkorvensEsplanad.setBounds(250, 202, 210, 26);
 		getContentPane().add(txtlkorvensEsplanad);
 		
 		txtMalm = new JTextField();
 		txtMalm.setText("21741 Malmö");
 		txtMalm.setColumns(10);
-		txtMalm.setBounds(250, 63, 169, 26);
+		txtMalm.setBounds(250, 226, 210, 26);
 		getContentPane().add(txtMalm);
 		
 		JLabel lblTelefon = new JLabel("Telefon:");
-		lblTelefon.setBounds(181, 104, 57, 16);
+		lblTelefon.setForeground(Color.WHITE);
+		lblTelefon.setBounds(181, 267, 57, 16);
 		getContentPane().add(lblTelefon);
 		
-		txtxxxx = new JTextField();
-		txtxxxx.setText("073-733XXXX");
-		txtxxxx.setColumns(10);
-		txtxxxx.setBounds(250, 99, 169, 26);
-		getContentPane().add(txtxxxx);
+		txtTele = new JTextField();
+		txtTele.setText("073-7334762");
+		txtTele.setColumns(10);
+		txtTele.setBounds(250, 262, 210, 26);
+		getContentPane().add(txtTele);
 		
 		JLabel lblPersonnr = new JLabel("Personnr:");
-		lblPersonnr.setBounds(181, 132, 70, 16);
+		lblPersonnr.setForeground(Color.WHITE);
+		lblPersonnr.setBounds(181, 295, 70, 16);
 		getContentPane().add(lblPersonnr);
 		
-		textField = new JTextField();
-		textField.setText("120210-5132");
-		textField.setColumns(10);
-		textField.setBounds(250, 127, 169, 26);
-		getContentPane().add(textField);
+		textPersonnr = new JTextField();
+		textPersonnr.setText("120210-5132");
+		textPersonnr.setColumns(10);
+		textPersonnr.setBounds(250, 290, 210, 26);
+		getContentPane().add(textPersonnr);
+		
+		JLabel lblEpost = new JLabel("E-Post");
+		lblEpost.setForeground(Color.WHITE);
+		lblEpost.setBounds(181, 323, 70, 16);
+		getContentPane().add(lblEpost);
+		
+		txtHuberthunkgmailcom = new JTextField();
+		txtHuberthunkgmailcom.setText("olle_babe55@gmail.com");
+		txtHuberthunkgmailcom.setColumns(10);
+		txtHuberthunkgmailcom.setBounds(250, 318, 210, 26);
+		getContentPane().add(txtHuberthunkgmailcom);
+		
+		JButton btnRedigera = new JButton("Spara");
+		btnRedigera.setBounds(569, 326, 117, 29);
+		getContentPane().add(btnRedigera);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(Main.class.getResource("/images/hubertface2.jpg")));
+		lblNewLabel.setBounds(252, 11, 151, 152);
+		getContentPane().add(lblNewLabel);
+		
+		JLabel lblBkBicepsAb = new JLabel("BK Biceps AB");
+		lblBkBicepsAb.setFont(new Font("Lucida Grande", Font.BOLD, 20));
+		lblBkBicepsAb.setForeground(Color.WHITE);
+		lblBkBicepsAb.setBounds(530, 11, 143, 44);
+		getContentPane().add(lblBkBicepsAb);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon(Main.class.getResource("/images/gymwallpaper.jpg")));
+		lblNewLabel_1.setBounds(168, 0, 523, 362);
+		getContentPane().add(lblNewLabel_1);
+		
 	}
 }
