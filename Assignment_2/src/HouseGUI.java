@@ -61,13 +61,14 @@ public class HouseGUI extends JFrame {
 		houses[9] = new House (1969, 58);
 		
 		//UPPGIFT 1.4 ARRAYLIST
-		Random r = new Random();
-		Random s = new Random();
+		Random i = new Random();
+		Random j = new Random();
 		
 		ArrayList<House> houseList = new ArrayList<House>();
 		for (int qq = 0; qq<100; qq++){
-			int ra
-			houseList.add(new House(1919,190));
+			int ia = i.nextInt(216) + 1800; //Tar värde från 1800 och upp till 1800 + 216
+			int jb = j.nextInt(991) + 10; //Lägsta värdet av husens storlek + 10
+			houseList.add(new House(ia,jb));
 		}
 		
 		
@@ -118,7 +119,7 @@ public class HouseGUI extends JFrame {
 	
 	//UPPGIFT 1.4 PRINT
 	txtrHouses.append("\nUppgift 1.4:\n");
-	for(House h: houseList){
+	for(House h:houseList){
 		if (h.getYearBuilt() !=0 && h.getSize() !=0){
 			txtrHouses.append("Ett annat hus byggdes år " + h.getYearBuilt() + " och är " + h.getSize() + " kvadratmeter stort.\n");
 		} else {
