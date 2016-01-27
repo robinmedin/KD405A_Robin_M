@@ -1,0 +1,36 @@
+
+A) KONSTRUKTOR			| public House(int yearBuilt,int size){
+						| }
+						
+						| private int yearBuilt;
+C) INSTANSVARIABLER		| private int size;
+						| private final int minSize = 10;
+						
+B) INSTANSMETOD			| public int getYearBuilt(){
+						| }
+						| public int getSize(){
+						| }
+
+
+D) Vad innebär det att minSize är deklarerad final?
+   SVAR: Det innebär att variabeln minSize är slutgiltig och går inte att ändra. 
+   
+E) Vad innebär det att vissa koddelar är deklarerade private och andra public?   
+   SVAR: Delar av koden som är deklarerade som "private" kan ej anropas utanför klassen där de deklarerats, till skillnad från "public" som KAN
+	anropas utanför klassen. 
+	
+F) Rita ett UML diagram över klassen:
+   SVAR:
+_________________________________________
+|										|
+|			     House					|
+|_______________________________________|
+| 										|
+| 		- yearBuilt: int				|
+| 		- size: int						|
+| 		- minSize = 10: int				|
+|_______________________________________|
+| 		+ House(YearBuilt, size): int	|
+| 		+ getYearBuilt(): int			|
+| 		+ getSize(): int				|
+|_______________________________________|
