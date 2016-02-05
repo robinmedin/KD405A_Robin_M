@@ -27,26 +27,29 @@ public class Bike {
 		}
 	}
 
-	/** CONSTRUCTOR */
+	/** Constructor for creating new bikes, with parameters of color, size and price */
 	public Bike(String color, int size, int price) {
 		this.color = color;
 		this.size = size;
 		this.price = price;
 	}
 
-	/** METHODS */
+	/** Method for returning color of bike*/
 	public String getColor() {
 		return this.color;
 	}
-
+	
+	/**Method for returning size of bike*/
 	public int getSize() {
 		return this.size;
 	}
 
+	/**Method for returning price of bike*/
 	public int getPrice() {
 		return this.price;
 	}
 
+	/**Method for setting the price of a bike)*/
 	public void setPrice(int price) {
 		this.price = price;
 	}
