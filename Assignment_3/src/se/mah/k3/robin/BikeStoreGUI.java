@@ -114,13 +114,13 @@ public class BikeStoreGUI extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				String bikeColor = txtColor.getText(); //Hämtar värden från textfield textColor och sätter in dem i en string, bikeColor
-				int bikePrice = Integer.parseInt(txtPrice.getText()); //Hämtar värden från textfield txtPrice, konverterar int till string 
-				int bikeSize = Integer.parseInt(txtSize.getText()); //Hämtar värden från textfield txtSize, konverterar int till string 
+				String bikeColor = txtColor.getText(); 					/**Hämtar värden från textfield textColor och sätter in dem i en string, bikeColor*/
+				int bikePrice = Integer.parseInt(txtPrice.getText()); 	/**Hämtar värden från textfield txtPrice, konverterar int till string*/
+				int bikeSize = Integer.parseInt(txtSize.getText()); 	/**Hämtar värden från textfield txtSize, konverterar int till string*/
 				
 				
-				bikeStore.addBike(bikeColor, bikeSize, bikePrice); //Lägg till cyklar i ArrayList getAllBikes
-				textArea.setText(bikeStore.getAllBikes()); //Hämtar alla cyklarna från ArrayListen getAllBikes
+				bikeStore.addBike(bikeColor, bikeSize, bikePrice); 		/**Lägg till cyklar i ArrayList getAllBikes*/
+				textArea.setText(bikeStore.getAllBikes()); 				/**Hämtar alla cyklarna från ArrayListen getAllBikes*/
 				
 			}
 		});

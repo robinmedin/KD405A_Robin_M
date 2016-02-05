@@ -12,6 +12,14 @@ public class Bike {
 		this.size = size;
 
 		
+	}
+
+	/** Constructor for creating new bikes, with parameters of color, size and price */
+	public Bike(String color, int size, int price) {
+		//this.color = color;
+		//this.size = size;
+		//this.price = price;
+		
 		 /** Loops through colors to check if a color is set in the Constants.java*/
 		boolean trueColor = false;
 		for (int i = 0; i < Constants.APPROVED_COLORS.length; i++) {
@@ -23,15 +31,20 @@ public class Bike {
 		if (trueColor == true) {
 			this.color = color;
 		} else {
-			this.color = "404 - Color not found!";
+			this.color = "0";
 		}
-	}
-
-	/** Constructor for creating new bikes, with parameters of color, size and price */
-	public Bike(String color, int size, int price) {
-		this.color = color;
-		this.size = size;
-		this.price = price;
+		
+		if (size <= Constants.MAX_SIZE && size >= Constants.MIN_SIZE){
+			this.size = size;
+		} else {
+			this.size = 0;
+		}
+		
+		if (price <= Constants.MAX_PRICE && price >= Constants.MIN_PRICE){
+			this.price = price;
+		} else {
+			this.price = 0;
+		}
 	}
 
 	/** Method for returning color of bike*/
