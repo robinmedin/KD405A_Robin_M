@@ -2,39 +2,31 @@ package se.mah.k3.robin;
 
 public class Human {
 	
-	private String dog;
+	private Dog dog;
 	private String name; 
-	private String info;
+	
 	
 	public Human(String name){
+		this.name = name;
 	}
 	
 	public String getName(){
-		return name;
+		return this.name;
 	}
 	
-	public String buyDog(){
-		return dog;
+	public void buyDog(Dog dog){
+		this.dog = dog;
 	}
 	
 	public String getInfo(){
-		return info = "x äger en hund som heter y, x äger inte en hund";
+
+		if (dog == null) {
+			String info = getName() + " does not own a dog";
+			return info;
+		} else {
+			String info = getName() + " owns a dog named " + dog.getDogName();
+			return info;
+		}
 	}
 	
-
 }
-
-
-/**getInfo returnerar: "x äger en hund som heter y" eller " x äger inte en hund"*/
-
-
-/**
-
--dog:Dog
--name:String
-+Human(name:String)
-+getName():String
-+buyDog(dog:Dog)
-+getInfo():String
-
-*/

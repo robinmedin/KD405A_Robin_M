@@ -26,6 +26,9 @@ public class Humans_and_Dogs_GUI extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtHumanName;
 	private JTextField txtDogName;
+	
+	private Human human;
+	private JTextField infoField;
 
 	/**
 	 * Launch the application.
@@ -71,39 +74,63 @@ public class Humans_and_Dogs_GUI extends JFrame {
 		contentPane.add(txtDogName);
 		txtDogName.setColumns(10);
 		
+		JTextArea errorMessageArea = new JTextArea();
+		errorMessageArea.setForeground(Color.RED);
+		errorMessageArea.setBackground(SystemColor.window);
+		errorMessageArea.setBounds(22, 305, 405, 41);
+		contentPane.add(errorMessageArea);
+		
 		JButton btnNewHuman = new JButton("New Human");
 		btnNewHuman.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				if(txtHumanName.getText().length() > 3){
+					human = new Human(txtHumanName.getText());
+				}
+				
+				if(txtHumanName.getText().length() < 3){
+					errorMessageArea.setText("ERROR: Name has to be longer than 3 characters.");
+				}
+				
 			}
 		});
 		btnNewHuman.setBounds(164, 68, 117, 29);
 		contentPane.add(btnNewHuman);
 		
 		JButton btnBuyDog = new JButton("Buy Dog");
+		btnBuyDog.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				errorMessageArea.setText("");
+				
+					Dog dog = new Dog(txtDogName.getText());
+					human.buyDog(dog);
+			}
+		});
+		
 		btnBuyDog.setBounds(164, 106, 117, 29);
 		contentPane.add(btnBuyDog);
 		
+		infoField = new JTextField();
+		infoField.setBounds(22, 215, 406, 62);
+		contentPane.add(infoField);
+		infoField.setColumns(10);
+		
 		JButton btnPrintInfo = new JButton("Print Info");
+		btnPrintInfo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				infoField.setText(human.getInfo());
+			}
+		});
 		btnPrintInfo.setBounds(164, 147, 117, 29);
 		contentPane.add(btnPrintInfo);
-		
-		JTextPane textPaneInfo = new JTextPane();
-		textPaneInfo.setToolTipText("Info");
-		textPaneInfo.setBounds(22, 214, 405, 46);
-		contentPane.add(textPaneInfo);
 		
 		JLabel lblInformation = new JLabel("Information");
 		lblInformation.setForeground(Color.GRAY);
 		lblInformation.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 		lblInformation.setBounds(22, 196, 107, 16);
 		contentPane.add(lblInformation);
-		
-		JTextPane textPane = new JTextPane();
-		textPane.setBackground(SystemColor.window);
-		textPane.setForeground(Color.RED);
-		textPane.setToolTipText("Info");
-		textPane.setBounds(22, 286, 405, 46);
-		contentPane.add(textPane);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(84, 200, 343, 14);
@@ -112,11 +139,11 @@ public class Humans_and_Dogs_GUI extends JFrame {
 		JLabel lblErrorMessages = new JLabel("Error Messages");
 		lblErrorMessages.setForeground(Color.GRAY);
 		lblErrorMessages.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
-		lblErrorMessages.setBounds(22, 268, 107, 16);
+		lblErrorMessages.setBounds(22, 283, 107, 16);
 		contentPane.add(lblErrorMessages);
 		
 		JSeparator separator_1 = new JSeparator();
-		separator_1.setBounds(100, 272, 327, 14);
+		separator_1.setBounds(103, 287, 327, 14);
 		contentPane.add(separator_1);
 		
 		JLabel lblByRobinMedin = new JLabel("by Robin Medin");
@@ -128,5 +155,9 @@ public class Humans_and_Dogs_GUI extends JFrame {
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setBounds(25, 35, 402, 14);
 		contentPane.add(separator_2);
+		
+
+		
+
 	}
 }
