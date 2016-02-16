@@ -1,6 +1,6 @@
 package se.mah.k3.robin;
 
-public class ClockLogic {
+public class ClockLogic extends DigitalClockGUI {
 	
 	
 	private DigitalClockGUI ClockLogic;
