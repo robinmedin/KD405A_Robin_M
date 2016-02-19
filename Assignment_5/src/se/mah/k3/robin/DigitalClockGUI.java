@@ -43,7 +43,7 @@ public class DigitalClockGUI extends JFrame {
 	    public void activateAlarm(boolean activate){   
 	        if(activate)
 	        {
-	            lblAlarmmessage.setText("I COMMAND YOU TO WAKE UP");
+	            lblAlarmmessage.setText("NEVER GONNA LET YOU SNOOZE");
 	        }else{
 	            lblAlarmmessage.setText(" ");
 	        }
