@@ -13,6 +13,7 @@ public class ClockLogic {
 	private int alarmHour = -1;
 	private int alarmMinute = -1;
 
+
 	public ClockLogic(DigitalClockGUI DigitalClockGUI) {
 		this.clockGUI = DigitalClockGUI;
 		new ClockThread().start();
@@ -54,13 +55,10 @@ public class ClockLogic {
                    int hour = cal.get(Calendar.HOUR_OF_DAY);
                    clockGUI.setTimeOnLabel(timeFormat.format(hour)+":"+timeFormat.format(minute)+":"+timeFormat.format(second));
                    
-           //        If(hour == alarmHour) { 
-           //     	   DigitalClockGUI.activateAlarm(true);
-
-                   //}
                
                }
 			
 		}
 	}
 }
+
