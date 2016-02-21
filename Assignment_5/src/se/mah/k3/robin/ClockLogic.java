@@ -55,7 +55,10 @@ public class ClockLogic {
                    int hour = cal.get(Calendar.HOUR_OF_DAY);
                    clockGUI.setTimeOnLabel(timeFormat.format(hour)+":"+timeFormat.format(minute)+":"+timeFormat.format(second));
                    
-               
+                   if(alarmHour == hour && alarmMinute == minute){
+                	   clockGUI.activateAlarm(true);
+                   }
+                   
                }
 			
 		}
