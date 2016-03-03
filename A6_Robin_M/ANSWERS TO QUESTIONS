@@ -1,0 +1,19 @@
+1.  Mellan vilka stationer sker sökningen 
+Malmö C – Lund C
+
+2.  Hur ser en Query String ut om man bara vill ha 5 resultatet för sökningen (Titta i xsd filen för sökningen)?  
+
+NoOf.
+
+3.  Vilka delar av resan beskriver dessa taggar: <Journeys></Journeys>, <Journey></Journey>,<RouteLinks></RouteLinks>, <RouteLink></RouteLink>? Placera dem även korrekt hierarkiskt. 
+
+Journeys beskriver information om start och slutdestination och Journey beskriver information om mellan stationerna, Route Link innehåller all info om Route Links, Route Links är de mer specifika tiderna, priserna, avvikelserna, osv
+
+4.  Vilken XML-tagg innehåller antal byte för en resa och under vilken huvudtagg är den taggen placerad?   
+
+NoOfChanges under Journey.
+
+5.  Ge exempel på en XML tagg som inte finns implementerad i det API du laddade ner
+<Message/> ?
+<CallTrip>false</CallTrip>
+<Deviations/>
