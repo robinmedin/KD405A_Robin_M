@@ -2,7 +2,7 @@
 
 
 
-#Assignment 7 image links:
+#Assignment 7 image links (The letter "R"):
 - 
 http://imgur.com/9ceLiDT
 -
