@@ -2,8 +2,9 @@
 
 
 
-#Assignment 7 image links (The letter "R"):
+Assignment 7 image links (The letter "R"):
 - 
-http://imgur.com/9ceLiDT
--
-http://imgur.com/j2CNm4I
+
+![alt tag] (http://i.imgur.com/9ceLiDT.jpg)
+
+![alt tag] (http://i.imgur.com/j2CNm4I.jpg)
